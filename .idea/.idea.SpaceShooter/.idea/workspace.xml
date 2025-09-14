@@ -14,10 +14,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9ec48ff3-f41b-4f1e-9c16-942036f1ccd5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpaceShooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpaceShooter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/NewMap.umap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEditor.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEditor.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/NiveauPrincipal.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/NiveauPrincipal.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonGameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonGameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/SpaceShooter/SpaceShooterCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SpaceShooter/SpaceShooterCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SpaceShooter/Private/SpaceShip.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/SpaceShooter/Public/SpaceShip.h" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +31,10 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Source/SpaceShooter/MyCameraActor.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/SpaceShooter/MyCameraActor.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/SpaceShooter/Private/Space.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/SpaceShooter/Public/Space.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SpaceShooter/Private/Projectile.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SpaceShooter/Private/space_ship.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SpaceShooter/Public/Projectile.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/SpaceShooter/Public/space_ship.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -175,7 +178,10 @@
       <updated>1757375700698</updated>
       <workItem from="1757375702548" duration="1055000" />
       <workItem from="1757704454715" duration="3978000" />
-      <workItem from="1757708543294" duration="5264000" />
+      <workItem from="1757708543294" duration="5867000" />
+      <workItem from="1757876821817" duration="2278000" />
+      <workItem from="1757879463608" duration="38000" />
+      <workItem from="1757879525088" duration="6764000" />
     </task>
     <servers />
   </component>
