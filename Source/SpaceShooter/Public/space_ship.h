@@ -35,6 +35,13 @@ protected:
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category="Input")
 	TObjectPtr<UInputAction> LookAction;
 
+	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category="Input")
+	TObjectPtr<UInputAction> FireAction;
+
+	UPROPERTY(EditDefaultsOnly, Category = Projectile)
+	TSubclassOf<class AProjectile> Projectile;
+
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -48,5 +55,8 @@ public:
 		
 	UFUNCTION()
 	void Look (const FInputActionValue& Value);
+
 	
+	UFUNCTION()
+	void Fire();
 };

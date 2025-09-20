@@ -1,8 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
-#include "GameFramework/CharacterMovementComponent.h"
 #include "space_ship.h"
+#include "GameFramework/CharacterMovementComponent.h"
+
 #include "EnhancedInputComponent.h"
+#include "Projectile.h"
 
 
 // Sets default values
@@ -45,6 +46,7 @@ void Aspace_ship::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	{
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &Aspace_ship::Move);
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &Aspace_ship::Look);
+		EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Started, this, &Aspace_ship::Fire);
 	}
 }
 
@@ -68,6 +70,39 @@ void Aspace_ship::Look (const FInputActionValue& Value)
 	if (Controller)
 	{
 		AddControllerYawInput(LookAxisValue.X);
-		AddControllerPitchInput(LookAxisValue.Y);
+	}
+}
+
+void Aspace_ship::Fire()
+{
+	// Attempt to fire a projectile.
+	if (Projectile)
+	{
+		// Get the camera transform.
+		FVector Location = GetActorLocation();
+		FRotator Rotation = FRotator(0.0f ,GetActorRotation().Yaw ,0.0f );
+		
+		FVector MuzzleOffset = FVector(75.0f, 0.0f, 0.0f);
+	         
+		// Transform MuzzleOffset from camera space to world space.
+		FVector MuzzleLocation = Location + FTransform(Rotation).TransformVector(MuzzleOffset);
+		FRotator MuzzleRotation = Rotation;
+	 
+		UWorld* World = GetWorld();
+		if (World)
+		{
+			FActorSpawnParameters SpawnParams;
+			SpawnParams.Owner = this;
+			SpawnParams.Instigator = GetInstigator();
+	 
+			// Spawn the projectile at the muzzle.
+			AProjectile* ProjectileToShoot = World->SpawnActor<AProjectile>(Projectile, MuzzleLocation, MuzzleRotation, SpawnParams);
+			if (ProjectileToShoot)
+			{
+				// Set the projectile's initial trajectory.
+				FVector LaunchDirection = MuzzleRotation.Vector();
+				ProjectileToShoot->FireInDirection(LaunchDirection);
+			}
+		}
 	}
 }
