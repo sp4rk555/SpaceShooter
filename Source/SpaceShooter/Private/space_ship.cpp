@@ -56,8 +56,8 @@ void Aspace_ship::Move (const FInputActionValue& Value)
 
 	if (Controller)
 	{
-		const FVector Right = GetActorRightVector();
-		const FVector Forward = GetActorForwardVector();
+		const FVector Right = FVector::RightVector;
+		const FVector Forward = FVector::ForwardVector;
 		AddMovementInput(Right, MovementValue.X);
 		AddMovementInput(Forward, MovementValue.Y);
 	}
@@ -105,4 +105,15 @@ void Aspace_ship::Fire()
 			}
 		}
 	}
+}
+
+void Aspace_ship::Hit()
+{
+	HealthPoint --;
+
+}
+
+void Aspace_ship::AddScore()
+{
+	Score = Score + 10;
 }

@@ -12,10 +12,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ec48ff3-f41b-4f1e-9c16-942036f1ccd5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpaceShooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpaceShooter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/NiveauPrincipal.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/NiveauPrincipal.umap" afterDir="false" />
-    </list>
+    <list default="true" id="9ec48ff3-f41b-4f1e-9c16-942036f1ccd5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -184,7 +181,7 @@
       <workItem from="1757879525088" duration="7944000" />
       <workItem from="1757965853179" duration="2741000" />
       <workItem from="1758400009989" duration="7400000" />
-      <workItem from="1758493845138" duration="2923000" />
+      <workItem from="1758493845138" duration="3333000" />
     </task>
     <servers />
   </component>

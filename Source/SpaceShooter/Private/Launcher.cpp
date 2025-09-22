@@ -24,7 +24,7 @@ void ALauncher::BeginPlay()
 void ALauncher::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	int WillSpawn =  FMath::RandRange(1,50);
+	int WillSpawn =  FMath::RandRange(1,150);
 	if (WillSpawn == 1)
 	{
 		Launch();
@@ -59,21 +59,48 @@ void ALauncher::Launch()
 		FRotator Rotation = FRotator::ZeroRotator;
 		if (SideSpawn == 1)
 		{
-			 Rotation = FRotator(0.0f , FMath::RandRange(-60.0f,60.0f),0.0f );
+			if (Location.Y <= 0.0f)
+			{
+				Rotation = FRotator(0.0f , FMath::RandRange(0.0f,60.0f),0.0f );
+			}
+			else
+			{
+				Rotation = FRotator(0.0f , FMath::RandRange(-60.0f,0.0f),0.0f );
+			}
 		}
 		if (SideSpawn == 2)
 		{
-			 Rotation = FRotator(0.0f , FMath::RandRange(120.0f,240.0f),0.0f );
+			if (Location.Y <= 0.0f)
+			{
+				Rotation = FRotator(0.0f , FMath::RandRange(120.0f,180.0f),0.0f );
+			}
+			else
+			{
+				Rotation = FRotator(0.0f , FMath::RandRange(180.0f,240.0f),0.0f );
+			}
 		}
 		if (SideSpawn == 3)
 		{
-			 Rotation = FRotator(0.0f , FMath::RandRange(-30.0f,-150.0f),0.0f );
+			if (Location.X <= 0.0f)
+			{
+				Rotation = FRotator(0.0f , FMath::RandRange(-30.0f,-90.0f),0.0f );
+			}
+			else
+			{
+				Rotation = FRotator(0.0f , FMath::RandRange(-90.0f,-150.0f),0.0f );
+			}
 		}
 		if (SideSpawn == 4)
 		{
-			 Rotation = FRotator(0.0f , FMath::RandRange(30.0f,150.0f),0.0f );
+			if (Location.X <= 0.0f)
+			{
+				Rotation = FRotator(0.0f , FMath::RandRange(30.0f,90.0f),0.0f );
+			}
+			else
+			{
+				Rotation = FRotator(0.0f , FMath::RandRange(90.0f,150.0f),0.0f );
+			}
 		}
-		
 	         
 		// Transform MuzzleOffset from camera space to world space.
 		FVector MuzzleLocation = Location;

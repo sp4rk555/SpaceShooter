@@ -2,7 +2,11 @@
 
 
 #include "Projectile.h"
+
+#include "Asteroides.h"
+#include "space_ship.h"
 #include "Components/BoxComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 AProjectile::AProjectile()
@@ -49,21 +53,13 @@ void AProjectile::OnOverlapBegin(AActor* MyActor, AActor* OtherActor)
 
 	if (OtherActor && OtherActor != this)
 	{
-		/*ACatchAi* CatchAi = Cast<ACatchAi>(OtherActor);
+		AAsteroides* Asteroide = Cast<AAsteroides>(OtherActor);
 
-		if (CatchAi)
+		if (Asteroide)
 		{
-			TArray<AActor*> FoundActors;
-			UGameplayStatics::GetAllActorsOfClass(GetWorld(), AThrowAi::StaticClass(), FoundActors);
-			if (FoundActors.Num() > 0)
-			{
-				AActor* Actor = FoundActors[0];
-				AThrowAi* ThrowAi = Cast<AThrowAi>(Actor);
-				ThrowAi->AddNumberOfBonusThrowAndDestroyed();
-			}
-			CatchAi->AddScore();
+			Asteroide->Hit();
 			Destroy();
-		}*/
+		}
 	}
 }
 

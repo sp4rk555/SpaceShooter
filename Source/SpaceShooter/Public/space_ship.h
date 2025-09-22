@@ -41,6 +41,12 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = Projectile)
 	TSubclassOf<class AProjectile> Projectile;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	int HealthPoint = 3;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	int Score = 0;
+
 
 public:	
 	// Called every frame
@@ -59,4 +65,8 @@ public:
 	
 	UFUNCTION()
 	void Fire();
+
+	void Hit();
+
+	void AddScore();
 };
